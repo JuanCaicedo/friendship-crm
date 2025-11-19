@@ -31,7 +31,16 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Verify compliance with `.specify/memory/constitution.md`:
+
+- **Data Privacy & Security**: Does this feature handle personal data? If yes, encryption, access controls, and consent mechanisms must be specified.
+- **User-Centric Design**: Does this solve a real user problem? Can it be independently tested by end users?
+- **Test-First Development**: Are test strategies defined for all data operations, APIs, and user workflows?
+- **API-First Architecture**: Are APIs defined? Are they versioned and backward-compatible?
+- **Observability**: Are logging and monitoring requirements specified?
+- **Versioning**: Are breaking changes identified? Is versioning strategy defined?
+
+If any principle cannot be satisfied, document justification in Complexity Tracking section below.
 
 ## Project Structure
 

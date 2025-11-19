@@ -1,50 +1,93 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version: 0.0.0 → 1.0.0 (Initial creation)
+Modified Principles: None (initial creation)
+Added Sections: Core Principles (6), Data Privacy & Security, Development Workflow, Governance
+Removed Sections: None
+Templates Updated:
+  ✅ .specify/templates/plan-template.md - Constitution Check section aligned
+  ✅ .specify/templates/spec-template.md - No changes needed (already aligned)
+  ✅ .specify/templates/tasks-template.md - No changes needed (already aligned)
+Follow-up TODOs: None
+-->
+
+# Friendship CRM Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Data Privacy & Security (NON-NEGOTIABLE)
+All user data MUST be handled with strict privacy controls. Personal information about
+friends and relationships MUST be encrypted at rest and in transit. Access controls MUST
+enforce least-privilege principles. No data collection without explicit user consent.
+Rationale: CRM systems handle sensitive personal relationship data; privacy breaches
+damage trust irreparably.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. User-Centric Design
+Every feature MUST solve a real user problem for managing friendships and relationships.
+User workflows take precedence over technical elegance. Features MUST be independently
+testable by end users. MVP delivery prioritizes core relationship management over
+nice-to-have features.
+Rationale: A CRM is only valuable if users can effectively manage their relationships
+with it.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-First Development (NON-NEGOTIABLE)
+TDD mandatory: Tests written → User approved → Tests fail → Then implement.
+Red-Green-Refactor cycle strictly enforced. Integration tests required for all
+data operations, API endpoints, and user workflows. Contract tests required for
+all external integrations.
+Rationale: CRM data integrity is critical; bugs in relationship data are costly
+and damage user trust.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. API-First Architecture
+All functionality MUST be accessible via well-defined APIs. APIs MUST support
+both programmatic and UI consumption. API contracts MUST be versioned and
+backward-compatible within major versions. Text-based protocols preferred for
+debuggability (JSON over binary).
+Rationale: Enables multiple interfaces (web, mobile, CLI) and future integrations
+without core logic duplication.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Observability & Logging
+All operations MUST produce structured logs. Logs MUST include request context,
+user actions, and data changes. Error tracking MUST capture full context without
+exposing sensitive data. Performance metrics MUST be collected for all user-facing
+operations.
+Rationale: CRM systems need audit trails for relationship data changes and
+performance monitoring for user experience.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### VI. Versioning & Backward Compatibility
+API versions follow SEMVER: MAJOR.MINOR.PATCH. Breaking changes require major
+version bumps. Database schema changes MUST be backward-compatible or include
+migration paths. Deprecation warnings MUST be provided at least one minor version
+before removal.
+Rationale: Users depend on stable APIs; breaking changes disrupt integrations
+and user workflows.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Data Privacy & Security
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+All features MUST comply with data protection regulations (GDPR, CCPA, etc.).
+Encryption at rest and in transit is mandatory. Access logging required for all
+data access operations. User data deletion requests MUST be honored within
+regulatory timeframes. No third-party data sharing without explicit opt-in consent.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow
+
+Code reviews MUST verify constitution compliance before merge. All PRs MUST include
+tests that demonstrate feature functionality. Complexity additions MUST be justified
+in the implementation plan. Features MUST be independently testable and deployable.
+Use `.specify/memory/constitution.md` as the source of truth for all development
+decisions.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other development practices and guidelines.
+Amendments require:
+1. Documentation of the proposed change and rationale
+2. Impact assessment on existing features and templates
+3. Update to version number per semantic versioning rules
+4. Propagation of changes to all dependent templates and documentation
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+All PRs and code reviews MUST verify compliance with constitution principles.
+Violations MUST be justified in the implementation plan's Complexity Tracking
+section or rejected.
+
+**Version**: 1.0.0 | **Ratified**: 2025-11-18 | **Last Amended**: 2025-11-18
