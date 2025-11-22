@@ -1,0 +1,32 @@
+# friendship-crm Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2025-11-20
+
+## Active Technologies
+- TypeScript 5+ with Next.js 14+ (App Router) + Next.js, React, Material-UI (MUI), Dexie.js (IndexedDB), Web Crypto API (001-friendship-crm)
+- IndexedDB with Dexie.js, encrypted with Web Crypto API (AES-GCM), supports future migration to hosted database (001-friendship-crm)
+
+- Flutter (Dart) or React Native (TypeScript) - see research.md for decision criteria + SQLCipher (encrypted SQLite), Flutter sqflite_sqlcipher OR React Native react-native-sqlcipher-storage, platform keychain/keystore (001-friendship-crm)
+
+## Project Structure
+
+```text
+src/
+tests/
+```
+
+## Commands
+
+npm test && npm run lint
+
+## Code Style
+
+Flutter (Dart) or React Native (TypeScript) - see research.md for decision criteria: Follow standard conventions
+
+## Recent Changes
+- 001-friendship-crm: Added TypeScript 5+ with Next.js 14+ (App Router) + Next.js, React, Material-UI (MUI), Dexie.js (IndexedDB), Web Crypto API
+
+- 001-friendship-crm: Added Flutter (Dart) or React Native (TypeScript) - see research.md for decision criteria + SQLCipher (encrypted SQLite), Flutter sqflite_sqlcipher OR React Native react-native-sqlcipher-storage, platform keychain/keystore
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->
